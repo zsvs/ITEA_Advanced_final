@@ -1,8 +1,14 @@
 resource "aws_ecs_task_definition" "tg-bot" {
-  family = "tg-bot"
+  family = "tg-bot_defenition"
+
+  runtime_platform {
+    operating_system_family = "LINUX"
+    cpu_architecture        = "X86_64"
+  }
+  depends_on = [aws_ecs_service.tg-bot-svc]
   container_definitions = jsonencode([
     {
-      name                    = "bot"
+      name                    = "bot-task"
       requiresCompatibilities = ["FARGATE"],
       networkMode             = "awsvpc"
       image                   = "ghostsvsghost/pytgweatherbot:latest"
@@ -13,6 +19,10 @@ resource "aws_ecs_task_definition" "tg-bot" {
         {
           containerPort = 80
           hostPort      = 80
+        },
+        {
+          containerPort = 443
+          hostPort      = 443
         }
       ],
       environment = [
