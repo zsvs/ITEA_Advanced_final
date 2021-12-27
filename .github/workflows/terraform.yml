@@ -47,7 +47,7 @@ jobs:
       - name: Terraform Apply
         working-directory: 'terraform'
         #if: github.ref == 'refs/heads/master' && github.event_name == 'push'
-        run: terraform apply -auto-approve -var "TG_API_KEY = ${{ secrets.TG_API_KEY }}" -var "OPENWEATHER_API_KEY = ${{ secrets.OPENWEATHER_API_KEY }}"
+        run: terraform apply -auto-approve -var TG_API_KEY="${{ secrets.TG_API_KEY }}" -var OPENWEATHER_API_KEY="${{ secrets.OPENWEATHER_API_KEY }}"
 
       - name: Terraform Output
         working-directory: 'terraform'
