@@ -1,5 +1,5 @@
 resource "aws_ecs_task_definition" "tg-bot" {
-  family = "tg-bot_defenition"
+  family = "tg-bot-task-defenition"
 
   runtime_platform {
     operating_system_family = "LINUX"
