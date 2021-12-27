@@ -5,7 +5,7 @@ resource "aws_ecs_task_definition" "tg-bot" {
     operating_system_family = "LINUX"
     cpu_architecture        = "X86_64"
   }
-  depends_on = [aws_ecs_service.tg-bot-svc]
+
   container_definitions = jsonencode([
     {
       name                    = "bot-task"
