@@ -2,19 +2,9 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ master ]
-    paths:
-    - 'Lesson7-hw/tg-bot/my-bot/*.py'
-    - 'Lesson7-hw/tg-bot/my-bot/requirements.txt'
-    - 'Lesson7-hw/tg-bot/my-bot/Dockerfile'
-    - 'Lesson7-hw/tg-bot/my-bot/README.md'
+    branches:
+      - master
   pull_request:
-    branches: [ master ]
-    paths:
-    - 'Lesson7-hw/tg-bot/my-bot/*.py'
-    - 'Lesson7-hw/tg-bot/my-bot/requirements.txt'
-    - 'Lesson7-hw/tg-bot/my-bot/Dockerfile'
-    - 'Lesson7-hw/tg-bot/my-bot/README.md'
 
 jobs:
 
@@ -31,7 +21,7 @@ jobs:
 
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: cd Lesson7-hw/tg-bot/my-bot/ && docker build . -f Dockerfile -t ${{ secrets.DOCKERHUB_USERNAME }}/pytgweatherbot:latest
+      run: cd app/ && docker build . -f Dockerfile -t ${{ secrets.DOCKERHUB_USERNAME }}/pytgweatherbot:latest
 
     - name: Push docker image to Docker Hub
       run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/pytgweatherbot:latest
