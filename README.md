@@ -1,5 +1,10 @@
 [![Build and push application image](https://github.com/zsvs/ITEA_Advanced_final/actions/workflows/telegram-weather-bot-docker-build.yml/badge.svg?branch=master&event=push)](https://github.com/zsvs/ITEA_Advanced_final/actions/workflows/telegram-weather-bot-docker-build.yml)
+
+
+
 [![Terraform](https://github.com/zsvs/ITEA_Advanced_final/actions/workflows/terraform.yml/badge.svg?branch=master&event=workflow_run)](https://github.com/zsvs/ITEA_Advanced_final/actions/workflows/terraform.yml)
+
+
 Final project for ITEA DevOps advanced course
 
 Using: Terraform, AWS ECS Fargate cluster, AWS CloudWatch, AWS S3, Docker, Python 3.9.9
