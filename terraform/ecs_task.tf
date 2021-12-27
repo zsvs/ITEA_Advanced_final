@@ -1,11 +1,6 @@
 resource "aws_ecs_task_definition" "tg-bot" {
-  family = "tg-bot-task-defenition"
-
-  runtime_platform {
-    operating_system_family = "LINUX"
-    cpu_architecture        = "X86_64"
-  }
-
+  family        = "tg-bot-task-defenition"
+  task_role_arn = data.aws_iam_role.ecs_task_role.arn
   container_definitions = jsonencode([
     {
       name                    = "bot-task"

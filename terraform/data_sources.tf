@@ -15,3 +15,7 @@ data "aws_subnet" "public_subnets" {
   count = length(data.aws_subnet_ids.default_subnet_ids.ids)
   id    = tolist(data.aws_subnet_ids.default_subnet_ids.ids)[count.index]
 }
+
+data "aws_iam_role" "ecs_task_role" {
+  name = "ecsTaskExecutionRole"
+}
