@@ -6,7 +6,7 @@
   scheduling_strategy                = "REPLICA"
   deployment_minimum_healthy_percent = 50
   deployment_maximum_percent         = 200
-  depends_on                         = [aws_security_group.allow_traffic.id]
+  depends_on                         = [aws_security_group.allow_traffic]
   network_configuration {
     security_groups  = aws_security_group.allow_traffic.id
     subnets          = data.aws_subnet.public_subnets.*.id
