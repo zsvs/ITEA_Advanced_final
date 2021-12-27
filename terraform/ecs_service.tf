@@ -8,8 +8,8 @@
   deployment_maximum_percent         = 200
   depends_on                         = [aws_security_group.allow_traffic]
   network_configuration {
-    security_groups  = aws_security_group.allow_traffic.id
-    subnets          = data.aws_subnet.public_subnets.*.id
+    security_groups  = [aws_security_group.allow_traffic.id]
+    subnets          = [data.aws_subnet.public_subnets.*.id]
     assign_public_ip = true
   }
 }
