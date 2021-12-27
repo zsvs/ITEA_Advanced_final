@@ -1,2 +1,6 @@
-﻿variable "OPENWEATHER_API_KEY" {}
-variable "TG_API_KEY" {}
+﻿variable "OPENWEATHER_API_KEY" {
+  default = "None"
+}
+variable "TG_API_KEY" {
+  default = "None"
+}
