@@ -32,7 +32,9 @@ In Terraform Cloud you need to set up:
 - AWS_SECRET_ACCESS_KEY
 
 as environment variables for your workspace.
+
 ---
+
 - TG_API_KEY
 - OPENWEATHER_API_KEY
 
