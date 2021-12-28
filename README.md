@@ -8,9 +8,11 @@
 # Final project for ITEA DevOps advanced course
 
 ---
+
 Using: Terraform, AWS ECS Fargate cluster, AWS CloudWatch, AWS S3, Docker, Python 3.9.9
 
 CI/CD: GitHub Actions
+
 ---
 
 As backend for Terraform used Terraform Cloud.
